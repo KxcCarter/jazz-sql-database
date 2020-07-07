@@ -4,18 +4,22 @@ function onReady() {
     // Add our click handler for submit artist
     $('#submit-artist').on('click', sendArtistToServer);
 
+    //---- CREATE HANDLER FOR ADDING TO SONGS --------
+
     // load data from the server, put it on the DOM
     getArtistData();
-    getSongData();    
+    getSongData();
 }
 
 function sendArtistToServer() {
     // Put up a div blocking user input
     console.log('In function sendArtistToServer');
     // What we want to send to the server as data
-    const artistToSend = {name: $('#artist-name').val(), 
-                          // .val() will always return a string
-                          born: $('#artist-born').val()};
+    const artistToSend = {
+        name: $('#artist-name').val(),
+        // .val() will always return a string
+        born: $('#artist-born').val()
+    };
     console.log(artistToSend);
     // Send the data to the server
     $.ajax({
@@ -28,7 +32,7 @@ function sendArtistToServer() {
         getArtistData();
     }).catch(function(error) {
         // unhappy path, something went wrong
-        console.log('error in artist post', error);        
+        console.log('error in artist post', error);
     });
 }
 
@@ -41,14 +45,14 @@ function getArtistData() {
     }).then(function(response) {
         const listOfArtists = response;
         $('#artistTableBody').empty();
-        for(let artist of listOfArtists) {
+        for (let artist of listOfArtists) {
             // Append each artist to the table
             $('#artistTableBody').append(`<tr>
                                             <td>${artist.artist_name}</td>
                                             <td>${artist.year_born}</td>
                                           </tr>`);
         }
-    }).catch(function (error) {
+    }).catch(function(error) {
         console.log('error in artist get', error);
     });
 }
@@ -59,7 +63,7 @@ function getSongData() {
     $.ajax({
         method: 'GET',
         url: '/songs'
-    }).then(function (response) {
+    }).then(function(response) {
         const listOfSongs = response;
         $('#songTableBody').empty();
         for (let song of listOfSongs) {
@@ -70,7 +74,7 @@ function getSongData() {
                                             <td>${song.date_released}</td>
                                           </tr>`);
         }
-    }).catch(function (error) {
+    }).catch(function(error) {
         console.log('error in song get', error);
     });
 }
