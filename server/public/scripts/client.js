@@ -6,6 +6,8 @@ function onReady() {
 
     //---- CREATE HANDLER FOR ADDING TO SONGS --------
 
+    $('#submit-song').on('click', sendSongToServer);
+
     // load data from the server, put it on the DOM
     getArtistData();
     getSongData();
@@ -56,6 +58,33 @@ function getArtistData() {
         console.log('error in artist get', error);
     });
 }
+
+// send song data to server -----
+
+function sendSongToServer() {
+    console.log('in sendSong...');
+
+    const songToSend = {
+        title: $('#song-name').val(),
+        length: $('#song-length').val(),
+        date_released: $('#date-released').val()
+    };
+    console.log(songToSend);
+
+    $.ajax({
+        type: 'POST',
+        url: '/songs',
+        data: songToSend
+    }).then((response) => {
+        console.log(response);
+        getSongData();
+
+    }).catch((error) => {
+        console.log('There was an error adding the song to the database.', error);
+
+    });
+}
+
 
 // get song data from the server
 function getSongData() {
