@@ -23,6 +23,10 @@ function sendArtistToServer() {
         born: $('#artist-born').val(),
     };
     console.log(artistToSend);
+    // Clear inputs for artist
+    $('#artist-name').val('');
+    $('#artist-born').val('');
+
     // Send the data to the server
     $.ajax({
             method: 'POST',
@@ -74,7 +78,13 @@ function sendSongToServer() {
         date_released: $('#date-released').val(),
     };
     console.log(songToSend);
+    // Clear song inputs
 
+    $('#song-name').val('');
+    $('#song-length').val('');
+    $('#date-released').val('');
+
+    // ajax call
     $.ajax({
             type: 'POST',
             url: '/songs',

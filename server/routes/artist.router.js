@@ -6,7 +6,7 @@ const moment = require('moment');
 router.get('/', (req, res) => {
     console.log(`In /artist GET`);
 
-    let queryText = `SELECT * FROM "artists";`;
+    let queryText = `SELECT * FROM artists ORDER BY artist_name ASC;`;
     pool
         .query(queryText)
         .then((result) => {
