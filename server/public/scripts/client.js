@@ -2,8 +2,8 @@ $(document).ready(onReady);
 
 function onReady() {
     // Add our click handler for submit artist
-    $('#submit-artist').on('click', sendArtistToServer);
-    $('#submit-song').on('click', sendSongToServer);
+    $('#submit-artist').on('submit', sendArtistToServer);
+    $('#submit-song').on('submit', sendSongToServer);
 
     // load data from the server, put it on the DOM
     getArtistData();
