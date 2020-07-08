@@ -13,65 +13,85 @@
 </head>
 
 <body>
-    <h1 class="text-center">Get Jazzy Database</h1>
-    <div class="container">
-        <h2>Famous Jazz Artists</h2>
-        <form action="">
-            <div class="form-row mb-2">
-                <div class="col">
-                    <input type="text" class="form-control" id="artist-name" placeholder="Artist name" />
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" id="artist-born" placeholder="Artist birth date" />
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" id="artist-instrument" placeholder="Instrument Played" />
-                </div>
-                <div class="col">
-                    <button class="btn btn-primary" id="submit-artist">
-              Submit Artist
-            </button>
-                </div>
-            </div>
-        </form>
+    <div class="jumbotron">
+        <h1 class="text-center">Get Jazzy Database</h1>
+    </div>
 
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Born</th>
-                    <th scope="col">Instrument</th>
-                </tr>
-            </thead>
-            <tbody id="artistTableBody">
-                <!-- Append artists here -->
-            </tbody>
-        </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h2>Famous Jazz Artists</h2>
+                <form id="submit-artist" action="">
+                    <div class="form-row mb-2">
+                        <div class="col">
+                            <input type="text" class="form-control" id="artist-name" placeholder="Artist name" />
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="artist-born" placeholder="Birth date" />
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" id="artist-instrument" placeholder="Instrument" />
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary">
+                  Submit Artist
+                </button>
+                        </div>
+                    </div>
+                </form>
+
+                <table class="table table-sm">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Born</th>
+                            <th scope="col">Instrument</th>
+                        </tr>
+                    </thead>
+                    <tbody id="artistTableBody">
+                        <!-- Append artists here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-6">
+                <h2>Famous Jazz Songs</h2>
+                <!-- Form for songs goes here -->
+                <form id="submit-song" action="">
+                    <div class="form-row mb-2">
+                        <div class="col">
+                            <input class="form-control" type="text" id="song-name" placeholder="Song title" />
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="text" id="song-length" placeholder="Song length" />
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="text" id="date-released" placeholder="Date released" />
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary">
+                  Submit Song
+                </button>
+                        </div>
+                    </div>
+                </form>
+
+                <table class="table table-sm">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Song Length</th>
+                            <th scope="col">Date Released</th>
+                        </tr>
+                    </thead>
+                    <tbody id="songTableBody">
+                        <!-- Append songs here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <br />
-    <hr />
-
-    <div class="container">
-        <h2>Famous Jazz Songs</h2>
-        <!-- Form for songs goes here -->
-        <input type="text" id="song-name" placeholder="Song title" />
-        <input type="text" id="song-length" placeholder="Length of song" />
-        <input type="text" id="date-released" placeholder="Date released" />
-        <button id="submit-song">Submit Song</button>
-
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                    <th>Title</th>
-                    <th>Length of Song</th>
-                    <th>Date Released</th>
-                </tr>
-            </thead>
-            <tbody id="songTableBody">
-                <!-- Append songs here -->
-            </tbody>
-        </table>
-    </div>
 </body>
 
 </html>

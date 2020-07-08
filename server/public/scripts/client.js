@@ -3,9 +3,6 @@ $(document).ready(onReady);
 function onReady() {
     // Add our click handler for submit artist
     $('#submit-artist').on('click', sendArtistToServer);
-
-    //---- CREATE HANDLER FOR ADDING TO SONGS --------
-
     $('#submit-song').on('click', sendSongToServer);
 
     // load data from the server, put it on the DOM
@@ -13,7 +10,8 @@ function onReady() {
     getSongData();
 }
 
-function sendArtistToServer() {
+function sendArtistToServer(event) {
+    event.preventDefault();
     // Put up a div blocking user input
     console.log('In function sendArtistToServer');
     // What we want to send to the server as data
@@ -77,7 +75,8 @@ function getArtistData() {
 
 // send song data to server -----
 
-function sendSongToServer() {
+function sendSongToServer(event) {
+    event.preventDefault();
     console.log('in sendSong...');
 
     const songToSend = {
