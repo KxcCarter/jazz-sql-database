@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Get Jazzy Database</title>
     <script src="vendors/jquery.js"></script>
     <script src="scripts/client.js"></script>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css" />
 </head>
+
 <body>
     <h1>Get Jazzy Database</h1>
 
     <h2>Famous Jazz Artists</h2>
-    <input type="text" id="artist-name" placeholder="Artist name">
-    <input type="text" id="artist-born" placeholder="Artist birth date">
+    <input type="text" id="artist-name" placeholder="Artist name" />
+    <input type="text" id="artist-born" placeholder="Artist birth date" />
+    <input type="text" id="artist-instrument" placeholder="Instrument Played" />
     <button id="submit-artist">Submit Artist</button>
     <table>
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Born</th>
+                <th>Instrument</th>
             </tr>
         </thead>
         <tbody id="artistTableBody">
@@ -31,9 +35,9 @@
     <hr />
     <h2>Famous Jazz Songs</h2>
     <!-- Form for songs goes here -->
-    <input type="text" id="song-name" placeholder="Song title">
-    <input type="text" id="song-length" placeholder="Length of song">
-    <input type="text" id="date-released" placeholder="Date released">
+    <input type="text" id="song-name" placeholder="Song title" />
+    <input type="text" id="song-length" placeholder="Length of song" />
+    <input type="text" id="date-released" placeholder="Date released" />
     <button id="submit-song">Submit Song</button>
 
     <table>
@@ -49,4 +53,5 @@
         </tbody>
     </table>
 </body>
+
 </html>

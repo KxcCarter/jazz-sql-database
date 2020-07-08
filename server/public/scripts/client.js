@@ -21,11 +21,13 @@ function sendArtistToServer() {
         name: $('#artist-name').val(),
         // .val() will always return a string
         born: $('#artist-born').val(),
+        instrument: $('#artist-instrument').val(),
     };
     console.log(artistToSend);
     // Clear inputs for artist
     $('#artist-name').val('');
     $('#artist-born').val('');
+    $('#artist-instrument').val('');
 
     // Send the data to the server
     $.ajax({
@@ -53,12 +55,18 @@ function getArtistData() {
         })
         .then(function(response) {
             const listOfArtists = response;
+            for (let each of listOfArtists) {
+                if (each.instrument === null) {
+                    each.instrument = 'Piano';
+                }
+            }
             $('#artistTableBody').empty();
             for (let artist of listOfArtists) {
                 // Append each artist to the table
                 $('#artistTableBody').append(`<tr>
                                             <td>${artist.artist_name}</td>
                                             <td>${artist.year_born}</td>
+                                            <td>${artist.instrument}</td>
                                           </tr>`);
             }
         })
