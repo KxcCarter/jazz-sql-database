@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
             const rows = result.rows;
             for (let each of rows) {
                 each.year_born = moment(each.year_born).format('MMM Do YYYY');
-                console.log(each);
             }
 
             res.send(rows); // result.rows will always be an Array
