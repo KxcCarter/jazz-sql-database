@@ -17,4 +17,9 @@ pool.on('error', (error) => {
     console.log('Postgres error!', error);
 });
 
+// I'm just testing stuff. Pay no attention...
+// pool.options.database = 'testy_McTest';
+
+// console.log(pool.options);
+
 module.exports = pool;
